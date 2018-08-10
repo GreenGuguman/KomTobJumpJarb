@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{78D07CAA-9E49-B6E1-DAF7-6CF9F4873F66}</ProjectGuid>
+    <ProjectGuid>{0E14E5C6-4026-21B7-0DDB-D74F4BD51DD9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,16 +68,16 @@
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\TestScript1.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Mi-Study/Unity/3 - Projects/2018.2.1f1/Project_KomTobChamChap/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Mi-Study/Unity/3 - Projects/Github/KomTobJumpJarb/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Mi-Study/Unity/3 - Projects/2018.2.1f1/Project_KomTobChamChap/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Mi-Study/Unity/3 - Projects/Github/KomTobJumpJarb/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Mi-Study/Unity/3 - Projects/2018.2.1f1/Project_KomTobChamChap/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Mi-Study/Unity/3 - Projects/Github/KomTobJumpJarb/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Mi-Study/Unity/3 - Projects/2018.2.1f1/Project_KomTobChamChap/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Mi-Study/Unity/3 - Projects/Github/KomTobJumpJarb/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -257,7 +257,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.1f1/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>D:/Mi-Study/Unity/3 - Projects/2018.2.1f1/Project_KomTobChamChap/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>D:/Mi-Study/Unity/3 - Projects/Github/KomTobJumpJarb/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.1f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

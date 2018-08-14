@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
     public float autoLoadNextLevelAfter;
+
     public Animator animator;
-    public bool isAdditiveScene;
 
     private void Start()
     {
-        //Transition_Panel = GameObject.Find("Transition_Panel");
+
 
         if (autoLoadNextLevelAfter == 0)
         {
@@ -18,27 +18,31 @@ public class LevelManager : MonoBehaviour {
         }
         else
         {
-            Invoke("FadeToLevel", autoLoadNextLevelAfter);
-            Invoke("LoadNextLevel", (autoLoadNextLevelAfter + 2));
+            FadeToNextLevel();
         }
         
+    }
+
+    public void FadeAnimation()
+    {
+        animator.SetTrigger("FadeOut");
+    }
+
+    public void FadeToNextLevel()
+    {
+        Invoke("FadeAnimation", (autoLoadNextLevelAfter / 2));
+        Invoke("LoadNextLevel", autoLoadNextLevelAfter);
     }
 
     public void LoadLevel(string Name) //we need to know which level we are
     {
         //Debug.Log("Level " + Name + " Requested");
-        if (isAdditiveScene)
-        {
-            animator.SetTrigger("Slide_BT");
-            SceneManager.LoadScene(Name, LoadSceneMode.Additive);
-            //Debug.Log("Single Mode");
-        }
-        else
-        {
-            SceneManager.LoadScene(Name, LoadSceneMode.Single);
-            //Debug.Log("Additive Mode");
-        }
+        SceneManager.LoadScene(Name);
+    }
 
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitRequest() //hey! just quit no need to know which level
@@ -46,16 +50,4 @@ public class LevelManager : MonoBehaviour {
         //Debug.Log("Bye Bye!");
         Application.Quit();
     }
-
-    public void FadeToLevel()
-    {
-        animator.SetTrigger("FadeOut");
-    }
-
-    public void LoadNextLevel()
-    {
-        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1), LoadSceneMode.Single);
-    }
-
-
 }

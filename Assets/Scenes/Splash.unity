@@ -393,6 +393,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 95778398033496936, guid: f23c8fc1062592846aec61d596a87ca6,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e814baff58762148aa8625d4bd8331d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f23c8fc1062592846aec61d596a87ca6, type: 2}
   m_IsPrefabAsset: 0
@@ -517,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &888387971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +537,9 @@ MonoBehaviour:
   MusicOnLevelChangeArray:
   - {fileID: 0}
   - {fileID: 8300000, guid: 1f57ac817db92d040a009df9ef785a77, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &888387972
 Transform:
   m_ObjectHideFlags: 0
@@ -732,7 +740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &2052787167
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6,15 +6,17 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour {
 
     public AudioClip[] MusicOnLevelChangeArray;
+    //public bool dontDestroyIt;
 
     private AudioSource audioSource;
 
     void Awake()
     {
+        //if (dontDestroyIt) { 
         DontDestroyOnLoad(gameObject);
         //Debug.Log("Hey im still alive " + name);
-
         audioSource = GetComponent<AudioSource>();
+        //}
     }
 
     // Use this for initialization
@@ -46,6 +48,11 @@ public class MusicManager : MonoBehaviour {
             audioSource.loop = true;
             audioSource.Play();
         }
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 
     /*void OnLevelWasLoaded(int level)

@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             LoadMenuWithAnimation(defaultAnimation);
+            
         }
 	}
 

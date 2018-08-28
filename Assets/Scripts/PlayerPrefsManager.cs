@@ -18,11 +18,9 @@ public class PlayerPrefsManager : MonoBehaviour {
         {
             PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
         }
-        else if(volume < 1){
-            Debug.Log("that's beyond off");
-        }
+
         else{
-            Debug.Log("too loud! ah!! my ears!!!");
+            Debug.Log("R.I.P my ears!!!");
         }
     }
 

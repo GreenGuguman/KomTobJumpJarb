@@ -25,38 +25,6 @@ public class OptionsController : MonoBehaviour {
         DifficultyChange();
     }
 
-    #region my crazy code
-    private bool RequiredObjectCheck()
-    {
-        if(musicManager = FindObjectOfType<MusicManager>())
-        {
-            Debug.Log("Music Manager Checked");
-            return true;
-        }
-        else
-        {
-            //backupMusicManger.SetActive(true);
-            Debug.Log("Phew! we have backup");
-            return false;
-        }
-
-    }
-
-    void VolumeChange()
-    {
-        if (musicManager == null)
-        {
-            //Debug.Log("oh no");
-            //musicManager.SetVolume(musicVolume_Slider.value);
-            Application.Quit();
-        }
-        else
-        {
-            musicManager.SetVolume(musicVolume_Slider.value);    
-        }
-    }
-    #endregion
-
     public void SaveAndExit(/*string LevelToLoad*/)
     {
         UpdatePreference();
@@ -90,19 +58,27 @@ public class OptionsController : MonoBehaviour {
 
     private void GetPreference()
     {
-        musicVolume_Slider.value = PlayerPrefsManager.GetMasterVolume() / 10;
+
+        musicVolume_Slider.value = PlayerPrefsManager.GetMasterVolume() * 10;
+        //As slider value is 10 time greater than PlayerPrefsManager
+        //ex. PlayerPrefsManager value = 0.5 -> slider value = 5
+        //Debug.Log("New Volume = " + musicVolume_Slider.value);
+
         difficulty_Slider.value = PlayerPrefsManager.GetDifficulty();
+        //Debug.Log("Difficulty = " + PlayerPrefsManager.GetDifficulty());
     }
 
     private void SetPreference()
     {
         musicManager.SetVolume(musicVolume_Slider.value / 10);
+        //Debug.Log(musicVolume_Slider.value);
         DifficultyChange();
     }
 
     private void UpdatePreference()
     {
         PlayerPrefsManager.SetMasterVolume(musicVolume_Slider.value / 10);
+        //Debug.Log(PlayerPrefsManager.GetMasterVolume());
         PlayerPrefsManager.SetDifficulty(difficulty_Slider.value);
     }
 

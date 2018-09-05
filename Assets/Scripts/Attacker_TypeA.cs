@@ -8,21 +8,20 @@ public class Attacker_TypeA : MonoBehaviour {
     //Delete this no longer need it //[Range (-1f, 1.5f)]
     private float currentSpeed;
     private GameObject currentTarget;
+    private Animator TargetAnimation;
 
-    public float currentOpponentHealth = 100;
     public GameObject TargetObject;
-    public Animator TargetAnimation;
+
 
 	// Use this for initialization
 	void Start () {
-        
+        TargetAnimation = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(currentOpponentHealth);
         AttackerFly();
-	}
+    }
 
     void AttackerFly()
     {
@@ -42,15 +41,37 @@ public class Attacker_TypeA : MonoBehaviour {
     }
 
     //called from the animator at the time of actual blow
-    void StrikeCurrentTraget(float damage)
+    void StrikeCurrentTarget(float damage)
     {
-        currentOpponentHealth = currentOpponentHealth - damage;
-        Debug.Log(name + " had dealt " + damage);
+        if (currentTarget)
+        {
+            Health health = currentTarget.GetComponent<Health>();
+            if (health)
+            {
+                health.DamageReceived(damage);
+                Debug.Log(health.health);
+            }
+        }
+
     }
 
     public void Attack (GameObject obj)
     {
         currentTarget = obj;
+        Debug.Log(currentTarget.name);
+    }
+
+    void CurrentTargetCheck()
+    {
+        if (!currentTarget)
+        {
+            TargetAnimation.SetBool("isAttacking", false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        TargetAnimation.SetBool("isAttacking", false);
     }
 
 }

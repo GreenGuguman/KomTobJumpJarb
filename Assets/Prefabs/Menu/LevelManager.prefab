@@ -53,4 +53,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoLoadNextLevelAfter: 0
   animator: {fileID: 0}
-  isAdditiveScene: 0

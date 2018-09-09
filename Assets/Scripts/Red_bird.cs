@@ -22,10 +22,8 @@ public class Red_bird : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //Debug.Log("some thing happen");
         GameObject obj = collider.gameObject;
 
-        //Only if it collide with defender
         if (!obj.GetComponent<Defender_TypeA>())
         {
             return;
@@ -36,10 +34,8 @@ public class Red_bird : MonoBehaviour {
             attackerA.Attack(obj);
         }
 
-        //Debug.Log("Brown_bird Collided with " + collider);
         if (obj.GetComponent<Cannon_ball>())
         {
-            //triger an animation when collide with that obj
             targetAnimation.SetTrigger("isAttacked");
         }
     }

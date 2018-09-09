@@ -53,6 +53,9 @@ GameObject:
   - component: {fileID: 95083011494657654}
   - component: {fileID: 58202303356909920}
   - component: {fileID: 114181081654804426}
+  - component: {fileID: 50870870675443270}
+  - component: {fileID: 114662939175096064}
+  - component: {fileID: 114252748114579642}
   m_Layer: 10
   m_Name: Red_bird
   m_TagString: Untagged
@@ -252,7 +255,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440202655363590}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7605224, w: 0.6493117}
+  m_LocalRotation: {x: 0, y: 0, z: -0.13917309, w: 0.9902681}
   m_LocalPosition: {x: 1.05, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -310,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097173875387948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0.109}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0.109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4157540079530438}
@@ -339,7 +342,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206710051578580}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7605224, w: 0.6493117}
+  m_LocalRotation: {x: 0, y: 0, z: 0.13917309, w: 0.9902681}
   m_LocalPosition: {x: -1.05, y: 1.9, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
@@ -428,6 +431,26 @@ Transform:
   m_Father: {fileID: 4652489182607596}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50870870675443270
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113545541263166}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58202303356909920
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -437,12 +460,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.35
+  m_Radius: 1.63
 --- !u!95 &95083011494657654
 Animator:
   serializedVersion: 3
@@ -490,10 +513,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f56ec68f9b07ca488661ba8d1a740f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpeed: 0
-  animationName: StartToFly
   TargetObject: {fileID: 0}
-  TargetAnimation: {fileID: 95083011494657654}
+--- !u!114 &114252748114579642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113545541263166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe577c043470c4429c01a5417db670c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!114 &114662939175096064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113545541263166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b395ab25453dd546bc3674795a91ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212214197312661728
 SpriteRenderer:
   m_ObjectHideFlags: 1

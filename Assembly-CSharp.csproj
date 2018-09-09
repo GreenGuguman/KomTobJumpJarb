@@ -61,9 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Cannon_ball.cs" />
     <Compile Include="Assets\Scripts\Attacker_TypeA.cs" />
     <Compile Include="Assets\Scripts\Brown_bird.cs" />
+    <Compile Include="Assets\Scripts\Button.cs" />
+    <Compile Include="Assets\Scripts\Cannon_ball.cs" />
     <Compile Include="Assets\Scripts\Defender_TypeA.cs" />
     <Compile Include="Assets\Scripts\Defenders_TypeB.cs" />
     <Compile Include="Assets\Scripts\FadeEffectTransition.cs" />
@@ -71,12 +72,17 @@
     <Compile Include="Assets\Scripts\FadeOut_Transition.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Machine_Cannon.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\OptionsController.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Red_bird.cs" />
-    <Compile Include="Assets\Volcano_mine.cs" />
+    <Compile Include="Assets\Scripts\Shooter.cs" />
+    <Compile Include="Assets\Scripts\Shredder.cs" />
+    <Compile Include="Assets\Scripts\Volcano_mine.cs" />
+    <Compile Include="Assets\Scripts\White_bird.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

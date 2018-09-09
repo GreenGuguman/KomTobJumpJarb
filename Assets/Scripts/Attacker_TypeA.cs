@@ -49,7 +49,7 @@ public class Attacker_TypeA : MonoBehaviour {
             if (health)
             {
                 health.DamageReceived(damage);
-                Debug.Log(health.health);
+                //Debug.Log(health.health);
             }
         }
 
@@ -58,7 +58,7 @@ public class Attacker_TypeA : MonoBehaviour {
     public void Attack (GameObject obj)
     {
         currentTarget = obj;
-        Debug.Log(currentTarget.name);
+        //Debug.Log(currentTarget.name);
     }
 
     void CurrentTargetCheck()

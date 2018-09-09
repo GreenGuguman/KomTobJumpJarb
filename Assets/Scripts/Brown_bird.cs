@@ -10,22 +10,22 @@ public class Brown_bird : MonoBehaviour {
     private Attacker_TypeA attackerA;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         targetAnimation = GetComponent<Animator>();
         attackerA = GetComponent<Attacker_TypeA>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //Debug.Log("some thing happen");
         GameObject obj = collider.gameObject;
 
-        //Only if it collide with defender
         if (!obj.GetComponent<Defender_TypeA>())
         {
             return;
@@ -36,10 +36,8 @@ public class Brown_bird : MonoBehaviour {
             attackerA.Attack(obj);
         }
 
-        //Debug.Log("Brown_bird Collided with " + collider);
         if (obj.GetComponent<Cannon_ball>())
         {
-            //triger an animation when collide with that obj
             targetAnimation.SetTrigger("isAttacked");
         }
     }

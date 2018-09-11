@@ -8,27 +8,29 @@ public class Button : MonoBehaviour {
     public static GameObject selectedDefender;
 
     private Button[] buttonArray;
-    
+    //private Animator animator;
+
 	// Use this for initialization
 	void Start () {
         buttonArray = FindObjectsOfType<Button>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        //animator = FindObjectOfType<Animator>();
 	}
 
     private void OnMouseDown()
     {
         foreach(Button thisButton in buttonArray)
         {
-            thisButton.GetComponent<SpriteRenderer>().color = Color.gray;
+            thisButton.GetComponentInChildren<SpriteRenderer>().color = Color.gray;
+            //animator.SetTrigger("Idle");
         }
 
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        //animator.SetTrigger("Zoom");
 
         selectedDefender = defenderPrefab;
+
+
+
     }
 
 }

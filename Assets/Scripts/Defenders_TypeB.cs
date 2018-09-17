@@ -13,7 +13,7 @@ public class Defenders_TypeB : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        TargetAnimation.SetBool("isAttacking", false);
+        TargetAnimation.SetBool("IsAttacking", false);
     }
 
 }

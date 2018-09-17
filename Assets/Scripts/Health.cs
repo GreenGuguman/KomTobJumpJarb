@@ -6,6 +6,8 @@ public class Health : MonoBehaviour {
 
     public float health=100;
 
+    public GameObject thisParentObject;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,7 +23,9 @@ public class Health : MonoBehaviour {
         health -= damage;
         if (health <= 0)
         {
-            DestroyObject();
+            //need to destroy parent obj
+            Destroy(thisParentObject);
+            print("this one is dead");
         }
     }
 

@@ -10,8 +10,9 @@ public class Attacker_TypeA : MonoBehaviour {
     private GameObject currentTarget;
     private Animator TargetAnimation;
 
+    [Tooltip ("The delay in second before this type of enemy will be spawned")]
+    public float spawnEverySecond;
     public GameObject TargetObject;
-
 
 	// Use this for initialization
 	void Start () {

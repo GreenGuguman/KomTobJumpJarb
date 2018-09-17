@@ -5,16 +5,27 @@ using UnityEngine;
 public class DefenderSpawner : MonoBehaviour {
 
     public Camera targetCamera;
+
     private GameObject parentObject;
+    //private Defenders_TypeB[] defenders_TypeB_Array;
+
+    private AmountOfMaterial amountOfMaterial;
 
     private void Start()
     {
         FindingObject();
     }
 
+    private void Update()
+    {
+        //defenders_TypeB_Array = FindObjectsOfType<Defenders_TypeB>();
+    }
+
     void FindingObject()
     {
+        amountOfMaterial = FindObjectOfType<AmountOfMaterial>();
         parentObject = GameObject.Find("Defender_TypeA");
+        //Strign is dangerous, it won't update if you rename it
 
         if (!parentObject)
         {
@@ -22,7 +33,7 @@ public class DefenderSpawner : MonoBehaviour {
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         //print(Input.mousePosition);
         //print(CalculateWorldPointOfMouseClick());
@@ -30,9 +41,24 @@ public class DefenderSpawner : MonoBehaviour {
 
         Vector2 rawPosition = CalculateWorldPointOfMouseClick();
         Vector2 roundedPosition = SnapToGrid(rawPosition);
-
-        Quaternion noRotation = Quaternion.identity;
         GameObject targetDefender = Button.selectedDefender;
+
+        int defenderACost = targetDefender.GetComponent<Defender_TypeA>().materialCost;
+        if (amountOfMaterial.UseMaterial(defenderACost) == AmountOfMaterial.Status.SUCCESS)
+        {
+            SpawnDefender(roundedPosition, targetDefender);
+        }
+        else
+        {
+            Debug.Log("Nope! not enough material");
+        }
+        
+
+    }
+
+    private void SpawnDefender(Vector2 roundedPosition, GameObject targetDefender)
+    {
+        Quaternion noRotation = Quaternion.identity;
 
         if (targetDefender == null)
         {
@@ -44,20 +70,18 @@ public class DefenderSpawner : MonoBehaviour {
 
             if (roundedPosition.x <= 0 | roundedPosition.x >= 6)
             {
-                //print("Invalid X Postion");
-            }else if (roundedPosition.y <=0 | roundedPosition.y >= 10) // i don't think if i need this
+                print("Invalid X Postion");
+            }
+            else if (roundedPosition.y <= 0 | roundedPosition.y >= 10) // i don't think if i need this
             {
                 print("Invalid Y Postion");
             }
             else
             {
-                //print("All Checked");
                 GameObject newDefender = Instantiate(targetDefender, roundedPosition, noRotation) as GameObject;
                 newDefender.transform.parent = parentObject.transform;
             }
         }
-
-        
     }
 
     Vector2 SnapToGrid(Vector2 rawWorldPos)
@@ -79,6 +103,5 @@ public class DefenderSpawner : MonoBehaviour {
         return worldPosition;
 
     }
-
 
 }

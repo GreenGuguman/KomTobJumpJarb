@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20188032530791430, guid: 44491570e5c18c946903c4f519258bb8, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44491570e5c18c946903c4f519258bb8, type: 3}
 --- !u!1 &126710055
@@ -2725,7 +2729,7 @@ PrefabInstance:
     - target: {fileID: 114174095375283204, guid: 55180cb62064caf499e9a8316041a226, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 83426790d64a66747842d18961430a95, type: 3}
+      objectReference: {fileID: 21300000, guid: e871210b293287e4198483120f438265, type: 3}
     - target: {fileID: 1675104463791034, guid: 55180cb62064caf499e9a8316041a226, type: 3}
       propertyPath: m_IsActive
       value: 1

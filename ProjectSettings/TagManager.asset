@@ -18,7 +18,7 @@ TagManager:
   - Background_obj
   - Defender_obj
   - Attacker_obj
-  - 
+  - Card_System
   - 
   - 
   - 
@@ -51,4 +51,7 @@ TagManager:
     locked: 0
   - name: Attacker_obj
     uniqueID: 3933486763
+    locked: 0
+  - name: Card_System
+    uniqueID: 1824996921
     locked: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PauseButton : MonoBehaviour {
 
+    public static bool gameIsPause;
+
     public GameObject targetMenu;
     //private LevelManager levelManager;
 
@@ -15,12 +17,41 @@ public class PauseButton : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-
+        PauseEvent();
     }
 
-    private void OnMouseDown()
+    void PauseEvent()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gameIsPause)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        gameIsPause = false;
+        targetMenu.SetActive(false);
+    }
+
+    public void Pause()
     {
         targetMenu.SetActive(true);
-        targetMenu.GetComponent<Animator>().SetTrigger("SlideDown");
+        Time.timeScale = 0;
+        gameIsPause = true;
     }
+
+    //private void OnMouseDown()
+    //{
+        //targetMenu.SetActive(true);
+        //targetMenu.GetComponent<Animator>().SetTrigger("PopUp");
+    //}
 }

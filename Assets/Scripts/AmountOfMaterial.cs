@@ -12,7 +12,7 @@ public class AmountOfMaterial : MonoBehaviour {
     //only use text to display not storing
     //only do translation to text not from text
 
-    private int currentAmount = 6;
+    private int currentAmount = 0;
 
 	// Use this for initialization
 	void Start () {

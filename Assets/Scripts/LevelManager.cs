@@ -38,11 +38,18 @@ public class LevelManager : MonoBehaviour {
     {
         //Debug.Log("Level " + Name + " Requested");
         SceneManager.LoadScene(Name);
+        ResetTimeScale();
     }
 
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ResetTimeScale();
+    }
+
+    private static void ResetTimeScale()
+    {
+        Time.timeScale = 1;
     }
 
     public void QuitRequest() //hey! just quit no need to know which level

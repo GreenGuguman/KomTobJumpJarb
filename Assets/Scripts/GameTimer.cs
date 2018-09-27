@@ -11,7 +11,7 @@ public class GameTimer : MonoBehaviour {
     private bool isTheEndOfLevel = false;
     private AudioSource audioSource;
     private LevelManager levelManager;
-    private GameObject winLabel;
+    //private GameObject winLabel;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class GameTimer : MonoBehaviour {
         {
             ObjectsToDestroy();
             audioSource.Play();
-            winLabel.SetActive(true);
+            //winLabel.SetActive(true);
             Invoke("LoadWinScreen", audioSource.clip.length);
             isTheEndOfLevel = true;
         }
@@ -48,12 +48,12 @@ public class GameTimer : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         levelManager = FindObjectOfType<LevelManager>();
 
-        winLabel = GameObject.Find("WinningText");
-        winLabel.SetActive (false);
-        if (!winLabel)
-        {
-            Debug.LogWarning("please create a text obj name it WinningText :)");
-        }
+        //winLabel = GameObject.Find("WinningText");
+        //winLabel.SetActive (false);
+        //if (!winLabel)
+        //{
+            //Debug.LogWarning("please create a text obj name it WinningText :)");
+        //}
 
     }
 

@@ -42,17 +42,25 @@ public class DefenderSpawner : MonoBehaviour {
         Vector2 rawPosition = CalculateWorldPointOfMouseClick();
         Vector2 roundedPosition = SnapToGrid(rawPosition);
         GameObject targetDefender = Button.selectedDefender;
-
-        int defenderACost = targetDefender.GetComponent<Defender_TypeA>().materialCost;
-        if (amountOfMaterial.UseMaterial(defenderACost) == AmountOfMaterial.Status.SUCCESS)
+        
+        if (!targetDefender)
         {
-            SpawnDefender(roundedPosition, targetDefender);
+            print("Noting Selected");
         }
         else
         {
-            Debug.Log("Nope! not enough material");
+            int defenderACost = targetDefender.GetComponent<Defender_TypeA>().materialCost;
+
+            if (amountOfMaterial.UseMaterial(defenderACost) == AmountOfMaterial.Status.SUCCESS)
+            {
+                SpawnDefender(roundedPosition, targetDefender);
+            }
+            else
+            {
+                Debug.Log("Nope! not enough material");
+            }
+
         }
-        
 
     }
 

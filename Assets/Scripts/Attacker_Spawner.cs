@@ -13,8 +13,13 @@ public class Attacker_Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        SpawnAttacker();
+        //SpawnAttacker();
 	}
+
+    private void FixedUpdate()
+    {
+        SpawnAttacker();
+    }
 
     void SpawnAttacker()
     {

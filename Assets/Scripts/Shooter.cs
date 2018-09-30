@@ -64,7 +64,7 @@ public class Shooter : MonoBehaviour {
                 return;
             }
         }
-        Debug.LogError(name + "Can't find any spawner in lane");
+        Debug.Log(name + "Can't find any spawner in lane");
     }
 
     bool IsEnemyAhead()

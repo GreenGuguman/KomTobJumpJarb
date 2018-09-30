@@ -8,15 +8,13 @@ public class Button : MonoBehaviour {
     public GameObject defenderPrefab;
     public static GameObject selectedDefender;
 
-    private Text costTXT;
-
     private Button[] buttonArray;
     //private Animator animator;
 
 	// Use this for initialization
 	void Start () {
         CheckingNeededObject();
-	}
+    }
 
     private void OnMouseDown()
     {
@@ -31,24 +29,11 @@ public class Button : MonoBehaviour {
 
         selectedDefender = defenderPrefab;
 
-
-
     }
 
     void CheckingNeededObject()
     {
         buttonArray = FindObjectsOfType<Button>();
-        costTXT = GetComponentInChildren<Text>();
-
-        if (costTXT)
-        {
-            costTXT.text = defenderPrefab.GetComponent<Defender_TypeA>().materialCost.ToString();
-        }
-        else
-        {
-            Debug.LogWarning("This " + name + " has no material cost");
-        }
-        
     }
 
 }

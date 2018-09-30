@@ -26,13 +26,14 @@ public class White_bird : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject obj = collider.gameObject;
-
-        if (!obj.GetComponent<Defender_TypeA>())
+        
+        if (!obj.GetComponentInChildren<Defender_TypeA>())
         {
             return;
         }
         else
         {
+            print("collider happened with " + obj);
             targetAnimation.SetBool("isAttacking", true);
             attackerA.Attack(obj);
         }

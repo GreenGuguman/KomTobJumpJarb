@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 105503105467637570}
+  - component: {fileID: 8826496112401140915}
   m_Layer: 9
   m_Name: Block_Holder
   m_TagString: Untagged
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 6730617410728587270}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8826496112401140915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978081980885496558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130b097a28bfe5f4a89d4f0e9918c150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material1Cost: 4
 --- !u!1 &6731841022720068234
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,8 +218,8 @@ GameObject:
   - component: {fileID: 6645746357494028244}
   - component: {fileID: 6763267448927772778}
   - component: {fileID: 6751569717988589494}
-  - component: {fileID: 6700580120321762268}
   - component: {fileID: 6700736260687905268}
+  - component: {fileID: 1076066854412969802}
   - component: {fileID: 7793219933643005275}
   m_Layer: 9
   m_Name: B_Brick
@@ -221,7 +235,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6732239374536516856}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -295,19 +309,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6700580120321762268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6732239374536516856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130b097a28bfe5f4a89d4f0e9918c150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialCost: 4
 --- !u!114 &6700736260687905268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,8 +321,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe577c043470c4429c01a5417db670c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   thisParentObject: {fileID: 6732239374536516856}
+--- !u!114 &1076066854412969802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732239374536516856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a2aa7b66b1ab04987742f29ab8d727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededWood: 0
+  neededBrick: 7
+  neededMetal: 0
+  neededCrystal: 0
 --- !u!114 &7793219933643005275
 MonoBehaviour:
   m_ObjectHideFlags: 0

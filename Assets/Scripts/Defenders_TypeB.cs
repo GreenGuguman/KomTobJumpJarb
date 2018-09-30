@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Defenders_TypeB : MonoBehaviour {
 
+    public int material2Cost = 0;
     private Animator TargetAnimation;
 
     void Start()

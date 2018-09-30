@@ -6,10 +6,12 @@ public class DefenderSpawner : MonoBehaviour {
 
     public Camera targetCamera;
 
+    //private GameObject selectedDefender;
     private GameObject parentObject;
     //private Defenders_TypeB[] defenders_TypeB_Array;
 
-    private AmountOfMaterial amountOfMaterial;
+    //private AmountOfMaterial amountOfMaterial;
+    private Inventories inventories;
 
     private void Start()
     {
@@ -23,7 +25,11 @@ public class DefenderSpawner : MonoBehaviour {
 
     void FindingObject()
     {
-        amountOfMaterial = FindObjectOfType<AmountOfMaterial>();
+
+        //selectedDefender = Button.selectedDefender;
+        inventories = FindObjectOfType<Inventories>();
+
+        //amountOfMaterial = FindObjectOfType<AmountOfMaterial>();
         parentObject = GameObject.Find("Defender_TypeA");
         //Strign is dangerous, it won't update if you rename it
 
@@ -41,25 +47,39 @@ public class DefenderSpawner : MonoBehaviour {
 
         Vector2 rawPosition = CalculateWorldPointOfMouseClick();
         Vector2 roundedPosition = SnapToGrid(rawPosition);
-        GameObject targetDefender = Button.selectedDefender;
-        
-        if (!targetDefender)
+        GameObject selectedDefender = Button.selectedDefender;
+
+        if (!selectedDefender)
         {
             print("Noting Selected");
         }
         else
         {
-            int defenderACost = targetDefender.GetComponent<Defender_TypeA>().materialCost;
+            //int defenderACost = selectedDefender.GetComponent<Defender_TypeA>().material1Cost;
 
-            if (amountOfMaterial.UseMaterial(defenderACost) == AmountOfMaterial.Status.SUCCESS)
+            //if this script is attached to the child object instead
+            //int cost1 = selectedDefender.GetComponentInChildren<AllRequiredMaterial>().neededWood;
+            //int cost2 = selectedDefender.GetComponentInChildren<AllRequiredMaterial>().neededBrick;
+            //int cost3 = selectedDefender.GetComponentInChildren<AllRequiredMaterial>().neededMetal;
+            //int cost4 = selectedDefender.GetComponentInChildren<AllRequiredMaterial>().neededCrystal;
+
+            int cost1 = (selectedDefender.GetComponent<AllRequiredMaterial>().neededWood);
+            int cost2 = (selectedDefender.GetComponent<AllRequiredMaterial>().neededBrick);
+            int cost3 = (selectedDefender.GetComponent<AllRequiredMaterial>().neededMetal);
+            int cost4 = (selectedDefender.GetComponent<AllRequiredMaterial>().neededCrystal);
+
+            //Debug.Log(inventories.test);
+
+            
+            if (inventories.UseMaterial(cost1,cost2,cost3,cost4) == Inventories.Status.SUCCESS)
             {
-                SpawnDefender(roundedPosition, targetDefender);
+                SpawnDefender(roundedPosition, selectedDefender);
             }
             else
             {
                 Debug.Log("Nope! not enough material");
             }
-
+            
         }
 
     }

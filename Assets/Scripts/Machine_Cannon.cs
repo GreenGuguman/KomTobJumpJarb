@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Machine_Cannon : MonoBehaviour {
 
-    // Use this for initialization
-    void Start()
+    AllMaterial cost = new AllMaterial(0, 3, 10, 0);
+
+    public AllMaterial GetCost()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        return cost;
     }
 }
 

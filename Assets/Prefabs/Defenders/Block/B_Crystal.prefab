@@ -328,8 +328,8 @@ GameObject:
   - component: {fileID: 199504301388481021}
   - component: {fileID: 226680721474205251}
   - component: {fileID: 237780247223019935}
-  - component: {fileID: 145127964357031413}
   - component: {fileID: 145077413645817821}
+  - component: {fileID: 1625713948}
   - component: {fileID: 8601869508739624884}
   m_Layer: 9
   m_Name: B_Crystal
@@ -345,7 +345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257583730704446161}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -419,19 +419,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &145127964357031413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257583730704446161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130b097a28bfe5f4a89d4f0e9918c150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialCost: 4
 --- !u!114 &145077413645817821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +433,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   thisParentObject: {fileID: 257583730704446161}
+--- !u!114 &1625713948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257583730704446161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a2aa7b66b1ab04987742f29ab8d727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededWood: 0
+  neededBrick: 0
+  neededMetal: 0
+  neededCrystal: 5
 --- !u!114 &8601869508739624884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6883881226989603179}
+  - component: {fileID: 8820560318748363032}
   m_Layer: 9
   m_Name: Block_Holder
   m_TagString: Untagged
@@ -493,3 +497,16 @@ Transform:
   m_Father: {fileID: 259330661987526191}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8820560318748363032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622953799805347015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130b097a28bfe5f4a89d4f0e9918c150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material1Cost: 6

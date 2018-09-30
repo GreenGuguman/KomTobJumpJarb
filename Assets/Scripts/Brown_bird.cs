@@ -26,7 +26,7 @@ public class Brown_bird : MonoBehaviour {
     {
         GameObject obj = collider.gameObject;
 
-        if (!obj.GetComponent<Defender_TypeA>())
+        if (!obj.GetComponentInChildren<Defender_TypeA>())
         {
             return;
         }

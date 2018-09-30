@@ -5,7 +5,7 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
 
-    public float currentWeight = 0;
+    public float currentWeight = 3;
 
     private bool isSurrounded = false;
     private Vector3 targetPosition;
@@ -86,11 +86,10 @@ public class Block : MonoBehaviour
         {
             isSurrounded = true;
 
-            Debug.Log("i hit " + hit.collider.gameObject + " and its position = " + hit.collider.gameObject.transform.position);
+            //Debug.Log("i hit " + hit.collider.gameObject + " and its position = " + hit.collider.gameObject.transform.position);
             float speed = currentWeight * Time.deltaTime;
             Vector3 targetPos = new Vector3(hit.collider.transform.position.x, hit.collider.transform.position.y + 1, 0);
             transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
-
             targetPosition = targetPos;
         }
         else {

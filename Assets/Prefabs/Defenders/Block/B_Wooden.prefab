@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421853669798110754}
+  - component: {fileID: 944035401392613751}
   m_Layer: 9
   m_Name: Block_Holder
   m_TagString: Untagged
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 5740495495155337574}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944035401392613751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294717889871891342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130b097a28bfe5f4a89d4f0e9918c150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material1Cost: 3
 --- !u!1 &5737615509623020952
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,9 +60,9 @@ GameObject:
   - component: {fileID: 5690243132448878260}
   - component: {fileID: 5698831489336269066}
   - component: {fileID: 5728514962763138774}
-  - component: {fileID: 5634175742908373692}
-  - component: {fileID: 4530716860972107546}
   - component: {fileID: 5634124915173914772}
+  - component: {fileID: 263979667472000207}
+  - component: {fileID: 4530716860972107546}
   m_Layer: 9
   m_Name: B_Wooden
   m_TagString: DestroyOnWin
@@ -137,32 +151,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5634175742908373692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5737615509623020952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130b097a28bfe5f4a89d4f0e9918c150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialCost: 4
---- !u!114 &4530716860972107546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5737615509623020952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b960ad4d2a19be45b27b876c1445870, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWeight: 0
 --- !u!114 &5634124915173914772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +165,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   thisParentObject: {fileID: 5737615509623020952}
+--- !u!114 &263979667472000207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737615509623020952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a2aa7b66b1ab04987742f29ab8d727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededWood: 8
+  neededBrick: 0
+  neededMetal: 0
+  neededCrystal: 0
+--- !u!114 &4530716860972107546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737615509623020952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b960ad4d2a19be45b27b876c1445870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeight: 0
 --- !u!1 &5737993645830441530
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +260,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334371395
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9930df27d7198b94e8e6585dc05c0a41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -322,7 +339,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334371395
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300006, guid: 9930df27d7198b94e8e6585dc05c0a41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -401,7 +418,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334371395
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 9930df27d7198b94e8e6585dc05c0a41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -480,7 +497,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334371395
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 9930df27d7198b94e8e6585dc05c0a41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

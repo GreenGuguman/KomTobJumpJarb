@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Defender_TypeA : MonoBehaviour {
 
-    public int materialCost = 6;
+    public int material1Cost = 0;
 
 	// Use this for initialization
 	void Start () {

@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class Material : MonoBehaviour {
 
-    private AmountOfMaterial amountOfMaterial;
+    public float SpwanEverySecond = 60;
+    public int willGiveWood, willGiveBrick, willGiveMetal, willGiveCrystal;
 
-    // Use this for initialization
+    private Inventories inventories;
+
+    //AllMaterial material = new AllMaterial(); //Do i need it?
+
+    // Start is called before the first frame update
     void Start()
     {
-        amountOfMaterial = FindObjectOfType<AmountOfMaterial>();
+        inventories = FindObjectOfType<Inventories>();
     }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void AddMaterial(int amount)
+    // Update is called once per frame
+    void Update()
     {
-        amountOfMaterial.AddMaterial(amount);
+
     }
 
+    private void OnMouseDown()
+    {
+        //Debug.Log("You clicked me");
+        GiveMaterial();
+        Destroy(gameObject);
+    }
+
+    public void GiveMaterial()
+    {
+        inventories.addinventory(willGiveWood, willGiveBrick, willGiveMetal, willGiveCrystal);
+    }
 }

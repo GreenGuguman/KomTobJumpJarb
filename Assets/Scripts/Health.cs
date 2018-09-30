@@ -25,7 +25,7 @@ public class Health : MonoBehaviour {
         {
             //need to destroy parent obj
             Destroy(thisParentObject);
-            print("this one is dead");
+            //print("this one is dead");
         }
     }
 
